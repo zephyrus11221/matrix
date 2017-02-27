@@ -37,15 +37,30 @@ print_matrix(matrix1)
 
 #draw
 screen = new_screen()
-color = [0, 255, 0]
 
-matrix = new_matrix(4,0)
+matrix1 = []
+matrix2 = []
+matrix3 = []
+matrix4 = []
+
 for i in range(101):
-    p = [i*5, 500-i*5, 0, 1]
-    p2 = [500-i*5, i*5, 0, 1]
-    matrix.append(p)
-    matrix.append(p2)
-print_matrix(matrix)
+    add_edge(matrix1, i*5, 500-i*5, 0, 500-i*5, 0, 0)
+for i in range(101):
+    add_edge(matrix2, 500-i*5, i*5, 0, 0, 500-i*5, 0)
+for i in range(101):
+    add_edge(matrix3, 500-i*5, 500-i*5, 0, 500, i*5, 0,)
+for i in range(101):
+    add_edge(matrix4, i*5, 500-i*5, 0, 500-i*5, 500, 0)
 
-draw_lines( matrix, screen, color )
+color = [0, 200, 150]    
+draw_lines( matrix1, screen, color) 
+color = [100, 0, 200]    
+draw_lines( matrix2, screen, color)
+color = [0, 0, 150]    
+draw_lines( matrix3, screen, color) 
+
+color = [50, 200, 0]    
+draw_lines( matrix4, screen, color) 
+
+
 display(screen)
